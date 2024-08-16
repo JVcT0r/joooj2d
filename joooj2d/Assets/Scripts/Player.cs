@@ -61,6 +61,8 @@ public class Player : MonoBehaviour
             {
                 rig.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
                 doubleJump = true;
+                anim.SetBool("Jump", true);
+                
             }
             else
             {
@@ -79,6 +81,7 @@ public class Player : MonoBehaviour
         if (collision.gameObject.tag == "Ground")
         {
             isJumping = false;
+            anim.SetBool("Jump", false);
         }
     }
     
